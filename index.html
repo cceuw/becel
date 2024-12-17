@@ -11,161 +11,195 @@
     <!-- CSS para estilo -->
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background: #f7d0d6;
-            color: #6b4f3b;
-            overflow-x: hidden;
-            position: relative;
-        }
-        
-        /* Estilo para a tela cheia */
-        .full-screen {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f7d0d6;
+    color: #6b4f3b;
+    overflow-x: hidden;
+    position: relative;
+}
 
-        /* Efeito de estrelas ao fundo */
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://media.giphy.com/media/l1J9q8GTT9yLeTQxO/giphy.gif') repeat;
-            background-size: contain;
-            animation: starryBackground 50s linear infinite;
-        }
-        
-        /* Animação para o fundo de estrelas */
-        @keyframes starryBackground {
-            0% { background-position: 0 0; }
-            100% { background-position: 100% 100%; }
-        }
+/* Tela cheia */
+.full-screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
 
-        h1 {
-            font-family: 'Poppins';
-            font-size: 3.5rem;
-            color: #f06292;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            animation: fadeIn 2s ease-in-out;
-        }
-        
-        .content {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 2s ease-in-out;
-        }
-        
-        .kitty-image {
-            width: 200px;
-            margin-top: 20px;
-            animation: bounceIn 2s ease-in-out;
-        }
+/* Estilo para o título */
+h1 {
+    font-family: 'Poppins';
+    font-size: 3.5rem;
+    color: #f06292;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
 
-        .message-box {
-            background-color: #fce4ec;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 30px;
-            animation: fadeInUp 3s ease-in-out;
-        }
+/* Imagem do Hello Kitty */
+.kitty-image {
+    width: 200px;
+    margin-top: 20px;
+    animation: bounceIn 2s ease-in-out;
+}
 
-        .message-box h2 {
-            color: #e91e63;
-            font-size: 2rem;
-        }
-        
-        .gallery {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-            animation: fadeInUp 4s ease-in-out;
-        }
+/* Caixa de mensagem */
+.message-box {
+    background-color: #fce4ec;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 30px;
+    animation: fadeInUp 3s ease-in-out;
+}
 
-        .gallery img {
-            width: 200px;
-            height: 200px;
-            border-radius: 15px;
-            object-fit: cover;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
+/* Estilo das imagens na galeria */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    animation: fadeInUp 4s ease-in-out;
+}
 
-        .gallery img:hover {
-            transform: scale(1.1);
-        }
-        
-        .heart {
-            color: #e91e63;
-            font-size: 50px;
-            animation: heartBeat 1s infinite;
-            margin-top: 20px;
-        }
+.gallery img {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
 
-        /* Animações */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+.gallery img:hover {
+    transform: scale(1.1);
+}
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* Ícone do coração animado */
+.heart {
+    color: #e91e63;
+    font-size: 50px;
+    animation: heartBeat 1s infinite;
+    margin-top: 20px;
+}
 
-        @keyframes bounceIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.3);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
-        @keyframes heartBeat {
-            0% {
-                transform: scale(1);
-            }
-            25% {
-                transform: scale(1.1);
-            }
-            50% {
-                transform: scale(1);
-            }
-            75% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Media Queries para responsividade */
+
+@media (max-width: 768px) {
+    /* Ajuste do título */
+    h1 {
+        font-size: 2.5rem;  /* Reduz o tamanho da fonte */
+    }
+
+    /* Ajuste da imagem Hello Kitty */
+    .kitty-image {
+        width: 150px;  /* Reduz o tamanho da imagem */
+    }
+
+    /* Ajuste do espaço entre as imagens da galeria */
+    .gallery {
+        flex-wrap: wrap;  /* Permite que as imagens se ajustem em várias linhas */
+        justify-content: space-around;  /* Espaça as imagens */
+    }
+
+    .gallery img {
+        width: 150px;  /* Reduz o tamanho das imagens na galeria */
+        height: 150px;
+    }
+
+    .message-box {
+        padding: 10px;  /* Reduz o padding */
+        margin-top: 20px;  /* Menor distância do topo */
+    }
+
+    .heart {
+        font-size: 40px;  /* Ajusta o tamanho do ícone de coração */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para telas menores, como celulares em modo retrato */
+    h1 {
+        font-size: 2rem;  /* Font menor em telas muito pequenas */
+        padding: 0 10px;   /* Adiciona um padding para evitar o corte de texto */
+    }
+
+    .kitty-image {
+        width: 120px;  /* Aumenta ainda mais a redução da imagem */
+    }
+
+    .gallery img {
+        width: 120px;  /* Imagens menores em telas pequenas */
+        height: 120px;
+    }
+
+    .message-box {
+        padding: 8px;  /* Menos padding */
+    }
+
+    .heart {
+        font-size: 35px;  /* Ajusta o tamanho do coração para telas muito pequenas */
+    }
+}
+
     </style>
 </head>
 <body>
